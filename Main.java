@@ -31,7 +31,6 @@ public class Main {
             Gson gson = new Gson();
             Weather weather = gson.fromJson(new InputStreamReader(stream), Weather.class);
             weathers.add(weather);
-//            System.out.println(weather.main.temp);
         }
         Collections.sort(weathers, new Comparator<Weather>() {
             @Override
@@ -41,7 +40,7 @@ public class Main {
             }
         });
         for(Weather w : weathers){
-            System.out.println(w.name + " " + w.main.temp);
+            System.out.println(w.name + " " + (int)w.main.temp);
         }
     }
 }
